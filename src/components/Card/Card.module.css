@@ -1,0 +1,17 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--radii);
+    background-color: var(--colors-ui-base);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.cardImage {
+    display: block;
+    width: 160px;
+    height: 80px;
+    object-fit: cover;
+}
