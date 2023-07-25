@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/civ-randomizer-v2/static/css/main.312a5f53.css",
+    "main.js": "/civ-randomizer-v2/static/js/main.679f5ddf.js",
+    "index.html": "/civ-randomizer-v2/index.html",
+    "main.312a5f53.css.map": "/civ-randomizer-v2/static/css/main.312a5f53.css.map",
+    "main.679f5ddf.js.map": "/civ-randomizer-v2/static/js/main.679f5ddf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.312a5f53.css",
+    "static/js/main.679f5ddf.js"
+  ]
+}
