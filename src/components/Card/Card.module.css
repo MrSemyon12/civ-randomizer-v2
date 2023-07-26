@@ -7,6 +7,7 @@
     cursor: pointer;
     overflow: hidden;
     min-width: 280px;
+    position: relative;
 }
 
 .cardImage {
@@ -14,4 +15,23 @@
     width: 160px;
     height: 80px;
     object-fit: cover;
+    transition: 0.4s;
+}
+
+.wrapper:hover img {
+    width: 140px;
+}
+
+.gray img {
+    filter: grayscale(100%);
+}
+
+.crossout {
+    position: absolute;
+    top: 35px;
+    left: -30px;
+    width: 200px;
+    height: 8px;
+    background-color: var(--colors-crossover);
+    transform: rotate(-30deg);
 }

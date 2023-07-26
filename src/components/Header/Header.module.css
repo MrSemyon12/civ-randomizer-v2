@@ -10,8 +10,3 @@
     align-items: center;
     padding: 20px 0;
 }
-
-.controls {
-    font-size: var(--fs-lg);
-    font-weight: var(--fw-light);
-}

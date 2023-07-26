@@ -16,11 +16,12 @@
 
     /* Colors */
     --colors-text: hsl(200, 15%, 8%);
-    --colors-bg: hsl(0, 0%, 98%);
+    --colors-bg: hsl(0, 0%, 95%);
     --colors-ui-base: hsl(0, 0%, 100%);
+    --colors-crossover: hsl(0deg 100% 50% / 70%);
 
     /* Other */
-    --radii: 1rem;
+    --radii: 0.5rem;
     --shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -30,11 +31,13 @@ body {
     color: var(--colors-text);
     font-weight: var(--fw-light);
     background-color: var(--colors-bg);
+    user-select: none;
 }
 
 h1,
 h2,
 h3 {
+    margin: 0;
     font-weight: var(--fw-light);
 }
 
