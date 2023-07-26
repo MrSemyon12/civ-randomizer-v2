@@ -1,22 +1,16 @@
 import styles from './Header.module.css';
 
-import { ReactNode } from 'react';
-
 import { Container } from '../Container';
+import { Controls, ControlsProps } from '../Controls';
 
-type ChildrenProps = { children?: ReactNode };
-
-const Wrapper: React.FC<ChildrenProps> = ({ children }) => {
-    return <div className={styles.wrapper}>{children}</div>;
-};
-
-export const Header: React.FC = () => {
+export const Header: React.FC<ControlsProps> = (props) => {
     return (
         <header className={styles.header}>
             <Container>
-                <Wrapper>
+                <div className={styles.wrapper}>
                     <h1>Civ Randomizer</h1>
-                </Wrapper>
+                    <Controls {...props} />
+                </div>
             </Container>
         </header>
     );
