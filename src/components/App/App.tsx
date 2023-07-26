@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Header } from '../Header';
 import { Main } from '../Main';
 import { List } from '../List';
@@ -7,6 +9,7 @@ import { useCivs } from '../../hooks/useCivs';
 
 export const App: React.FC = () => {
     const { civs, setCivs } = useCivs();
+    const [pool, setPool] = useState([]);
 
     const toggleCiv = (id: number) => {
         setCivs(
@@ -16,6 +19,8 @@ export const App: React.FC = () => {
             })
         );
     };
+
+    const generatePool = (player: number, chioce: number) => {};
 
     const banDefault = () => {
         setCivs(
@@ -35,7 +40,7 @@ export const App: React.FC = () => {
         );
     };
 
-    const invert = () => {
+    const invertAll = () => {
         setCivs(
             civs.map((c) => {
                 c.picked = !c.picked;
@@ -47,9 +52,10 @@ export const App: React.FC = () => {
     return (
         <>
             <Header
+                generatePool={generatePool}
                 banDefault={banDefault}
                 clearAll={clearAll}
-                invert={invert}
+                invertAll={invertAll}
             />
             <Main>
                 <List>
