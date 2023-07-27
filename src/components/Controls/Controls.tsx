@@ -1,7 +1,5 @@
 import styles from './Controls.module.css';
 
-import { useState } from 'react';
-
 import { Button } from 'antd';
 
 import { PlayerSelect, ChoiceSelect } from './Select';
@@ -16,30 +14,27 @@ export type ControlsProps = {
 export const Controls: React.FC<ControlsProps> = (props) => {
     const { generatePool, banDefault, clearAll, invertAll } = props;
 
-    const [playersNum, setPlayer] = useState(4);
-    const [choiceNum, setChoice] = useState(3);
+    // const handlePlayer = (value: number) => {
+    //     setPlayer(value);
+    // };
 
-    const handlePlayer = (value: number) => {
-        setPlayer(value);
-    };
-
-    const handleChoice = (value: number) => {
-        setChoice(value);
-    };
+    // const handleChoice = (value: number) => {
+    //     setChoice(value);
+    // };
 
     return (
         <div className={styles.wrapper}>
-            <Button
+            {/* <Button
                 type='primary'
                 onClick={() => generatePool(playersNum, choiceNum)}
             >
                 Roll
-            </Button>
+            </Button> */}
             <Button onClick={() => banDefault()}>Default</Button>
             <Button onClick={() => clearAll()}>Clear</Button>
             <Button onClick={() => invertAll()}>Invert</Button>
-            <PlayerSelect handleChange={handlePlayer} />
-            <ChoiceSelect handleChange={handleChoice} />
+            {/* <PlayerSelect handleChange={handlePlayer} />
+            <ChoiceSelect handleChange={handleChoice} /> */}
         </div>
     );
 };

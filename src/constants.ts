@@ -1,5 +1,7 @@
 import { IMAGES } from './images';
 
+export const PLAYERS_NUM = 4;
+export const CHOICES_NUM = 3;
 export const CIVS = [
     {
         id: 1,

@@ -1,10 +1,8 @@
-import styles from './Pool.module.css';
+import styles from './CardPool.module.css';
 
-import { IPool } from '../../types/data';
+import { Pool } from '../../contexts';
 
-export const Pool: React.FC<IPool> = (props) => {
-    const { id, civs } = props;
-
+export const CardPool: React.FC<Pool> = ({ id, civs }) => {
     return (
         <article>
             <h2>Player {id}</h2>

@@ -1,0 +1,1 @@
+export { CardCiv } from './CardCiv';
