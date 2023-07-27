@@ -16,8 +16,8 @@ export type ControlsProps = {
 export const Controls: React.FC<ControlsProps> = (props) => {
     const { generatePool, banDefault, clearAll, invertAll } = props;
 
-    const [player, setPlayer] = useState(4);
-    const [choice, setChoice] = useState(3);
+    const [playersNum, setPlayer] = useState(4);
+    const [choiceNum, setChoice] = useState(3);
 
     const handlePlayer = (value: number) => {
         setPlayer(value);
@@ -29,7 +29,10 @@ export const Controls: React.FC<ControlsProps> = (props) => {
 
     return (
         <div className={styles.wrapper}>
-            <Button type='primary' onClick={() => generatePool(player, choice)}>
+            <Button
+                type='primary'
+                onClick={() => generatePool(playersNum, choiceNum)}
+            >
                 Roll
             </Button>
             <Button onClick={() => banDefault()}>Default</Button>

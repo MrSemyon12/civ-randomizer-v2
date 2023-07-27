@@ -4,3 +4,8 @@ export interface ICiv {
     icon: string;
     picked: boolean;
 }
+
+export interface IPool {
+    id: number;
+    civs: ICiv[];
+}
