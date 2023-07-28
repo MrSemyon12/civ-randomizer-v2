@@ -1,1 +1,1 @@
-export { Controls, type ControlsProps } from './Controls';
+export { Controls } from './Controls';
