@@ -1,14 +1,16 @@
+import { useContext } from 'react';
+
+import { AppContext } from '../../contexts';
+
 import { Select } from 'antd';
 
-type SelectProps = {
-    handleChange: (value: number) => void;
-};
+export const PlayerSelect: React.FC = () => {
+    const { setPlayersNum } = useContext(AppContext);
 
-export const PlayerSelect: React.FC<SelectProps> = ({ handleChange }) => {
     return (
         <Select
             defaultValue='4'
-            onChange={(value) => handleChange(+value)}
+            onChange={(value) => setPlayersNum(+value)}
             style={{ width: '100px' }}
             options={[
                 { value: '1', label: '1 Player' },
@@ -24,11 +26,13 @@ export const PlayerSelect: React.FC<SelectProps> = ({ handleChange }) => {
     );
 };
 
-export const ChoiceSelect: React.FC<SelectProps> = ({ handleChange }) => {
+export const ChoiceSelect: React.FC = () => {
+    const { setChoicesNum } = useContext(AppContext);
+
     return (
         <Select
             defaultValue='3'
-            onChange={(value) => handleChange(+value)}
+            onChange={(value) => setChoicesNum(+value)}
             style={{ width: '115px' }}
             options={[
                 { value: '1', label: 'Choice of 1' },

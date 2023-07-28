@@ -1,12 +1,12 @@
-import styles from './Card.module.css';
+import styles from './CardCiv.module.css';
 
-import { ICiv } from '../../types/data';
+import { Civ } from '../../contexts';
 
-interface ICardProps extends ICiv {
+type CardCivProps = Civ & {
     toggleCiv: (id: number) => void;
-}
+};
 
-export const Card: React.FC<ICardProps> = (props) => {
+export const CardCiv: React.FC<CardCivProps> = (props) => {
     const { id, title, icon, picked, toggleCiv } = props;
 
     const classes = [styles.wrapper, !picked && styles.gray].join(' ');
