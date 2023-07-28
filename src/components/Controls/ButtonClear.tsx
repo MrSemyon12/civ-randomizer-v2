@@ -5,7 +5,7 @@ import { AppContext } from '../../contexts';
 import { Button } from 'antd';
 
 export const ButtonClear: React.FC = () => {
-    const { civs, setCivs } = useContext(AppContext);
+    const { civs, setCivs, setPools } = useContext(AppContext);
 
     const clearAll = () => {
         setCivs(
@@ -14,6 +14,7 @@ export const ButtonClear: React.FC = () => {
                 return c;
             })
         );
+        setPools([]);
     };
 
     return <Button onClick={() => clearAll()}>Clear</Button>;
