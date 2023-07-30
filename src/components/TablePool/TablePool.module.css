@@ -1,0 +1,9 @@
+.wrapper {
+    display: inline-flex;
+    align-items: center;
+}
+
+.poolImage {
+    display: block;
+    height: 60px;
+}

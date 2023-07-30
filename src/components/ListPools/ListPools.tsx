@@ -1,9 +1,11 @@
+import styles from './ListPools.module.css';
+
 import { useContext } from 'react';
 
 import { AppContext } from '../../contexts';
 
 import { List } from '../List';
-import { CardPool } from '../CardPool';
+import { TablePool } from '../TablePool';
 
 export const ListPools: React.FC = () => {
     const { pools } = useContext(AppContext);
@@ -11,11 +13,13 @@ export const ListPools: React.FC = () => {
     return (
         <>
             {pools.length > 0 && (
-                <List>
-                    {pools.map((p) => (
-                        <CardPool key={p.id} {...p} />
-                    ))}
-                </List>
+                <div className={styles.wrapper}>
+                    <List>
+                        {pools.map((p) => (
+                            <TablePool key={p.id} {...p} />
+                        ))}
+                    </List>
+                </div>
             )}
         </>
     );
