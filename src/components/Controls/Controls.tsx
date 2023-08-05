@@ -1,4 +1,4 @@
-import styles from './Controls.module.css';
+import { Space } from 'antd';
 
 import { PlayerSelect, ChoiceSelect } from './Select';
 
@@ -9,13 +9,13 @@ import { ButtonClear } from './ButtonClear';
 
 export const Controls: React.FC = () => {
     return (
-        <div className={styles.wrapper}>
+        <Space>
             <ButtonGenerate />
             <ButtonDefault />
             <ButtonClear />
             <ButtonInvert />
             <PlayerSelect />
             <ChoiceSelect />
-        </div>
+        </Space>
     );
 };

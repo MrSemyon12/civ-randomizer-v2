@@ -2,7 +2,7 @@ import { AppProvider } from '../../contexts';
 
 import { Header } from '../Header';
 import { ListCivs } from '../ListCivs';
-import { ListPools } from '../ListPools';
+import { TablePools } from '../TablePools';
 import { Main } from '../Main';
 
 export const App: React.FC = () => {
@@ -10,7 +10,7 @@ export const App: React.FC = () => {
         <AppProvider>
             <Header />
             <Main>
-                <ListPools />
+                <TablePools />
                 <ListCivs />
             </Main>
         </AppProvider>

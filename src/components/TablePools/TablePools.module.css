@@ -1,6 +1,5 @@
 .wrapper {
-    display: inline-flex;
-    align-items: center;
+    margin-bottom: 1.5rem;
 }
 
 .poolImage {
