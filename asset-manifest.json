@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/civ-randomizer-v2/static/css/main.8cbb0d82.css",
-    "main.js": "/civ-randomizer-v2/static/js/main.94d02738.js",
+    "main.css": "/civ-randomizer-v2/static/css/main.f5b8501b.css",
+    "main.js": "/civ-randomizer-v2/static/js/main.ed617017.js",
     "static/media/shoshone.png": "/civ-randomizer-v2/static/media/shoshone.de2614a166428f816a3f.png",
     "static/media/venice.png": "/civ-randomizer-v2/static/media/venice.9429a9d6e82b2fea2e43.png",
     "static/media/indonesia.png": "/civ-randomizer-v2/static/media/indonesia.99b19bf681bc5742a6a7.png",
@@ -46,11 +46,11 @@
     "static/media/korea.png": "/civ-randomizer-v2/static/media/korea.b154068e153f9e63d43d.png",
     "static/media/carthage.png": "/civ-randomizer-v2/static/media/carthage.ecf406a8961ea17dbc73.png",
     "index.html": "/civ-randomizer-v2/index.html",
-    "main.8cbb0d82.css.map": "/civ-randomizer-v2/static/css/main.8cbb0d82.css.map",
-    "main.94d02738.js.map": "/civ-randomizer-v2/static/js/main.94d02738.js.map"
+    "main.f5b8501b.css.map": "/civ-randomizer-v2/static/css/main.f5b8501b.css.map",
+    "main.ed617017.js.map": "/civ-randomizer-v2/static/js/main.ed617017.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cbb0d82.css",
-    "static/js/main.94d02738.js"
+    "static/css/main.f5b8501b.css",
+    "static/js/main.ed617017.js"
   ]
 }
