@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { AppContext } from '../../contexts';
 
-import { Button } from 'antd';
+import { Button, Tooltip } from 'antd';
 
 export const ButtonGenerate: React.FC = () => {
     const { civs, playersNum, choicesNum, setPools } = useContext(AppContext);
@@ -36,9 +36,26 @@ export const ButtonGenerate: React.FC = () => {
         setPools(pools);
     };
 
+    const isPoolEnough = (() => {
+        const pickedCivsAmount = civs.reduce(
+            (acc, item) => acc + +item.picked,
+            0
+        );
+
+        return pickedCivsAmount >= playersNum * choicesNum;
+    })();
+
     return (
-        <Button type='primary' onClick={() => generatePool()}>
-            Roll
-        </Button>
+        <>
+            {!isPoolEnough ? (
+                <Tooltip title='Not enough pool'>
+                    <Button disabled>Roll</Button>
+                </Tooltip>
+            ) : (
+                <Button type='primary' onClick={() => generatePool()}>
+                    Roll
+                </Button>
+            )}
+        </>
     );
 };
