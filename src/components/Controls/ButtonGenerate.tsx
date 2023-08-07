@@ -16,7 +16,7 @@ export const ButtonGenerate: React.FC = () => {
             const playerCivs = [];
 
             if (availableCivs.length < choicesNum) {
-                throw new Error('Недостаточно цивилизаций для выбора.');
+                throw new Error('Not enough pool.');
             }
 
             while (playerCivs.length < choicesNum) {
@@ -37,12 +37,12 @@ export const ButtonGenerate: React.FC = () => {
     };
 
     const isPoolEnough = (() => {
-        const pickedCivsAmount = civs.reduce(
+        const availableCivsAmount = civs.reduce(
             (acc, item) => acc + +item.picked,
             0
         );
 
-        return pickedCivsAmount >= playersNum * choicesNum;
+        return availableCivsAmount >= playersNum * choicesNum;
     })();
 
     return (
