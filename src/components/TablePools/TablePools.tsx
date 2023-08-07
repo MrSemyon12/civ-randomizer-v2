@@ -2,52 +2,61 @@ import styles from './TablePools.module.css';
 
 import { useContext } from 'react';
 
-import { AppContext, Pool } from '../../contexts';
+import { AppContext, Civ, Pool } from '../../contexts';
 
 import type { ColumnsType } from 'antd/es/table';
-import { Space, Table } from 'antd';
+import { ConfigProvider, Space, Table, ThemeConfig } from 'antd';
 
-const columns: ColumnsType<Pool> = [
-    {
-        title: 'Player',
-        dataIndex: 'key',
-        key: 'title',
-        rowScope: 'row',
-        width: 50,
+const TablePool: React.FC<Pool> = ({ id, civs }) => {
+    const columns: ColumnsType<Civ> = [
+        {
+            title: `Player ${id}`,
+            dataIndex: 'title',
+            key: id,
+            width: 180,
+            render: (title, record) => (
+                <Space>
+                    <img
+                        src={record.icon}
+                        alt=''
+                        className={styles.poolImage}
+                    />
+                    <h2>{title}</h2>
+                </Space>
+            ),
+        },
+    ];
+
+    const dataSource = civs.map((c) => ({
+        key: c.id,
+        ...c,
+    }));
+
+    return (
+        <Table columns={columns} dataSource={dataSource} pagination={false} />
+    );
+};
+
+const theme: ThemeConfig = {
+    token: {
+        paddingContentVerticalLG: 5,
     },
-    {
-        title: 'Choice',
-        dataIndex: 'civs',
-        key: 'Choice',
-        render: (text, record) => (
-            <Space>
-                {record.civs.map((c) => (
-                    <Space key={c.id}>
-                        <img src={c.icon} alt='' className={styles.poolImage} />
-                        <h2>{c.title}</h2>
-                    </Space>
-                ))}
-            </Space>
-        ),
-    },
-];
+};
 
 export const TablePools: React.FC = () => {
     const { pools } = useContext(AppContext);
 
-    const dataSource = pools.map((p) => ({ key: p.id, ...p }));
-
     return (
-        <>
+        <ConfigProvider theme={theme}>
             {pools.length > 0 && (
                 <div className={styles.wrapper}>
-                    <Table
-                        columns={columns}
-                        dataSource={dataSource}
-                        pagination={false}
-                    />
+                    <Space>
+                        {pools.map((p) => (
+                            <TablePool key={p.id} {...p} />
+                        ))}
+                    </Space>
                 </div>
             )}
-        </>
+        </ConfigProvider>
     );
 };

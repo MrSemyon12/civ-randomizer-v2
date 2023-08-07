@@ -1,8 +1,10 @@
 .wrapper {
     margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 .poolImage {
     display: block;
-    height: 60px;
+    height: 40px;
 }
